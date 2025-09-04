@@ -139,7 +139,7 @@ def write_slurm_job(out_path: Path, job_name: str, amber_env_script: str, nprocs
 #SBATCH --partition=production
 #SBATCH --ntasks={nprocs}
 #SBATCH --mem=8G
-#SBATCH --time=3-00:00:00
+#SBATCH --time=5-00:00:00
 #SBATCH --account=yang_lab_csb
 
 set -euo pipefail
