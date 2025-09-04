@@ -36,8 +36,8 @@ Make sure Amber is sourced before running:
 source /home/shaoq1/bin/amber_env/amber-accre.sh
 ```
 
-# File Directory
-## Before running:
+## File Directory
+### Before running:
 ```bash
 ./
 ├── gbsa_prep.py
@@ -47,7 +47,7 @@ source /home/shaoq1/bin/amber_env/amber-accre.sh
     └── solvated_complex.prmtop
 ```
 
-## After running:
+### After running:
 ```bash
 ./
 ├── gbsa_prep.py
