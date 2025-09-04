@@ -42,7 +42,7 @@ source /home/shaoq1/bin/amber_env/amber-accre.sh
 ./
 ├── gbsa_prep.py
 ├── input.json
-└── <directory>/
+└── <prefix>/
     ├── md.nc
     └── solvated_protein.prmtop
 ```
@@ -52,10 +52,10 @@ source /home/shaoq1/bin/amber_env/amber-accre.sh
 ./
 ├── gbsa_prep.py
 ├── input.json
-├── <directory>/
+├── <prefix>/
 │   ├── md.nc
 │   └── solvated_protein.prmtop
-└── <directory>_gbsa/
+└── <prefix>_gbsa/
     ├── MMgbsa/
     │   ├── submit.job
     │   └── MMgbsa.in
@@ -94,5 +94,11 @@ Example input.json:
 ```bash
 python gbsa_prep.py -i input.json
 ```
+## 3. Job Submission Options
 
+- If `"submit_job": "True"` in your JSON file, the script will **automatically submit the job** with `sbatch`.  
+- If `"submit_job": "False"`, the script will only prepare the input files. You will then need to submit manually:
 
+```bash
+cd ./<prefix>_gbsa/MMgbsa/
+sbatch submit.job
