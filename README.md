@@ -44,7 +44,7 @@ source /home/shaoq1/bin/amber_env/amber-accre.sh
 ├── input.json
 └── <prefix>/
     ├── md.nc
-    └── solvated_protein.prmtop
+    └── solvated_complex.prmtop
 ```
 
 ## After running:
@@ -92,6 +92,7 @@ Example input.json:
 ```
 ## 2. Run the script
 ```bash
+source /home/shaoq1/bin/amber_env/amber-accre.sh
 python gbsa_prep.py -i input.json
 ```
 ## 3. Job Submission Options
