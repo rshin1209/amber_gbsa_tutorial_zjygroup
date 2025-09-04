@@ -1,5 +1,5 @@
 # GBSA Preparation and Submission Tool 
-## ZJYGroup At Vanderbilt University
+## ZJYgroup At Vanderbilt University
 
 This repository provides a Python script (`gbsa_prep.py`) to **prepare and run MM-GBSA or QM/MM-GBSA calculations** with [AmberTools](https://ambermd.org/AmberTools.php).  
 It automates:
@@ -132,3 +132,6 @@ python gbsa_prep.py -i input.json
 ```bash
 cd ./<prefix>_gbsa/MMgbsa/
 sbatch submit.job
+```
+## Contact
+For any questions, please contact wook.shin@vanderbilt.edu.
