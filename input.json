@@ -11,7 +11,7 @@
   "ligand_residues": "1-17",
   "ligand_residues_description": "Residue range belonging to ligand",
 
-  "level_of_theory": "PM6",
+  "level_of_theory": "MM",
   "level_of_theory_description": "Method used for calculation: MM or semiempirical (AM1, PM6, DFTB3, etc.)",
 
   "startframe": 5000,
@@ -20,7 +20,7 @@
   "endframe": 50000,
   "endframe_description": "Last frame index from trajectory",
 
-  "interval": 1000,
+  "interval": 100,
   "interval_description": "Frame sampling interval",
 
   "igb": 2,
@@ -41,7 +41,7 @@
   "qmcharge_lig": 1,
   "qmcharge_lig_description": "Charge of the ligand residues in QM region",
 
-  "submit_job": "False",
+  "submit_job": "True",
   "submit_job_description": "Automatically submit job after GBSA preparation (True or False)"
 }
 
