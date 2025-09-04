@@ -73,21 +73,50 @@ source /home/shaoq1/bin/amber_env/amber-accre.sh
 Example input.json:
 ```bash
 {
-  "directory": "//nobackup/yang_lab/shinw3/lasso/FC_wt",
+  "directory": "./FC_wt",
+  "directory_description": "File system path to the working directory where .nc and .prmtop files for this simulation are stored",
+
   "complex_residues": "1-723",
+  "complex_residues_description": "Residue range belonging to complex",
+
   "receptor_residues": "18-723",
+  "receptor_residues_description": "Residue range belonging to receptor",
+
   "ligand_residues": "1-17",
+  "ligand_residues_description": "Residue range belonging to ligand",
+
   "level_of_theory": "MM",
+  "level_of_theory_description": "Method used for calculation: MM or semiempirical (AM1, PM6, DFTB3, etc.)",
+
   "startframe": 5000,
+  "startframe_description": "Starting frame index from trajectory",
+
   "endframe": 50000,
+  "endframe_description": "Last frame index from trajectory",
+
   "interval": 100,
+  "interval_description": "Frame sampling interval",
+
   "igb": 2,
+  "igb_description": "Generalized Born solvent model parameter (igb = 2 recommended)",
+
   "saltcon": 0.150,
+  "saltcon_description": "Salt concentration (mM)",
+
   "qm_residues": "1-17,108-120",
+  "qm_residues_description": "Residues included in QM region",
+
   "qmcharge_com": 0,
+  "qmcharge_com_description": "Total charge of the complex. qmcharge_com = qmcharge_rec + qmcharge_lig",
+
   "qmcharge_rec": -1,
+  "qmcharge_rec_description": "Charge of the receptor residues in QM region",
+
   "qmcharge_lig": 1,
-  "submit_job": "True"
+  "qmcharge_lig_description": "Charge of the ligand residues in QM region",
+
+  "submit_job": "True",
+  "submit_job_description": "Automatically submit job after GBSA preparation (True or False)"
 }
 ```
 ## 2. Run the script
