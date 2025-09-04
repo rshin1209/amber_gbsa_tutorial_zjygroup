@@ -1,7 +1,7 @@
 # GBSA Preparation and Submission Tool 
 ## ZJYgroup At Vanderbilt University
 
-This repository provides a Python script (`gbsa_prep.py`) to **prepare and run MM-GBSA or QM/MM-GBSA calculations** with [AmberTools](https://ambermd.org/AmberTools.php).  
+This repository provides a Python script (`gbsa_prep.py`) to **prepare and run MM-GBSA or QM/MM-GBSA calculations** with [AmberTools](https://ambermd.org/AmberTools.php) on the **ACCRE cluster at Vanderbilt University**.
 It automates:
 
 - Stripping **complex/receptor/ligand** prmtops with `cpptraj`
