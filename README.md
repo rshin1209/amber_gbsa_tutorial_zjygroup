@@ -1,4 +1,5 @@
-# GBSA Preparation and Submission Tool ZJYGroup At Vanderbilt University
+# GBSA Preparation and Submission Tool 
+## ZJYGroup At Vanderbilt University
 
 This repository provides a Python script (`gbsa_prep.py`) to **prepare and run MM-GBSA or QM/MM-GBSA calculations** with [AmberTools](https://ambermd.org/AmberTools.php).  
 It automates:
@@ -37,16 +38,17 @@ source /home/shaoq1/bin/amber_env/amber-accre.sh
 
 # File Directory
 ## Before running:
+```bash
 ./
 ├── gbsa_prep.py
 ├── input.json
 └── <directory>/
     ├── md.nc
     └── solvated_protein.prmtop
+```
 
 ## After running:
-
-After running, you will see:
+```bash
 ./
 ├── gbsa_prep.py
 ├── input.json
@@ -65,9 +67,9 @@ After running, you will see:
     ├── receptor.prmtop
     ├── receptor_prmtop.in
     └── strip_traj.in
+```
 
-
-# 1. Prepare JSON input
+## 1. Prepare JSON input
 Example input.json:
 ```bash
 {
@@ -88,7 +90,7 @@ Example input.json:
   "submit_job": "True"
 }
 ```
-# 2. Run the script
+## 2. Run the script
 ```bash
 python gbsa_prep.py -i input.json
 ```
