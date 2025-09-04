@@ -6,7 +6,7 @@ It automates:
 
 - Stripping **complex/receptor/ligand** prmtops with `cpptraj`
 - Preparing stripped/autoimaged trajectory (`md.nc`)
-- Generating **MMPBSA input** files (MM or QM/MM)
+- Generating **GBSA input** files (MM or QM/MM)
 - Creating a **SLURM job script**
 - Optionally submitting the job with `sbatch`
 
