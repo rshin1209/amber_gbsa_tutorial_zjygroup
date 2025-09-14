@@ -168,7 +168,7 @@ echo "[$(date)] Done."
 def main():
     ap = argparse.ArgumentParser(description="Prepare and (optionally) run (QMMM-)MMGBSA from JSON.")
     ap.add_argument("-i", "--input", required=True, help="Path to JSON config.")
-    ap.add_argument("--amber-module", default="StdEnv/2023 gcc/12.3 openmpi/4.1.5 cuda/12.6 ambertools/25.0",
+    ap.add_argument("--amber-module", default="StdEnv/2023 gcc/12.3 openmpi/4.1.5 ambertools/25.0",
                     help="Path to shell script that sets AMBER environment.")
     ap.add_argument("--procs", type=int, default=8, help="MPI ranks for MMPBSA.py.MPI")
     ap.add_argument("--dry-run", action="store_true", help="Prepare everything but do not submit.")
