@@ -128,7 +128,7 @@ def write_mmgbsa_input(out_path: Path, data: Dict[str, Any]):
 """
     out_path.write_text(header + general + gb)
 
-def write_slurm_job(out_path: Path, job_name: str, amber_env_script: str, nprocs: int):
+def write_slurm_job(out_path: Path, job_name: str, amber_module_list: str, nprocs: int):
     """
     Write a SLURM script that runs MMPBSA.py.MPI with the prepared inputs.
     Assumes this script lives inside the mmgbsa work dir and that inputs are one dir up.
@@ -145,7 +145,7 @@ def write_slurm_job(out_path: Path, job_name: str, amber_env_script: str, nprocs
 set -euo pipefail
 
 module purge
-module load {amber_env_script}
+module load {amber_module_list}
 
 echo "[$(date)] Running MMPBSA.py.MPI..."
 mpirun -np {nprocs} "$AMBERHOME/bin/MMPBSA.py.MPI" -O \\
@@ -168,7 +168,7 @@ echo "[$(date)] Done."
 def main():
     ap = argparse.ArgumentParser(description="Prepare and (optionally) run (QMMM-)MMGBSA from JSON.")
     ap.add_argument("-i", "--input", required=True, help="Path to JSON config.")
-    ap.add_argument("--amber-env", default="StdEnv/2023 gcc/12.3 openmpi/4.1.5 cuda/12.6 ambertools/25.0",
+    ap.add_argument("--amber-module", default="StdEnv/2023 gcc/12.3 openmpi/4.1.5 cuda/12.6 ambertools/25.0",
                     help="Path to shell script that sets AMBER environment.")
     ap.add_argument("--procs", type=int, default=8, help="MPI ranks for MMPBSA.py.MPI")
     ap.add_argument("--dry-run", action="store_true", help="Prepare everything but do not submit.")
@@ -242,7 +242,7 @@ def main():
 
     # 4) SLURM script (inside mmgbsa_dir)
     job_script = mmgbsa_dir / "submit.job"
-    write_slurm_job(job_script, job_name=prefix, amber_env_script=args.amber_env, nprocs=args.procs)
+    write_slurm_job(job_script, job_name=prefix, amber_module_list=args.amber_module, nprocs=args.procs)
 
     # 5) Optionally submit
     submit = coerce_bool(data["submit_job"])
