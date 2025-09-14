@@ -34,7 +34,7 @@ Make sure Amber is sourced before running:
 
 ```bash
 module purge
-module load StdEnv/2023 gcc/12.3 openmpi/4.1.5 ambertools/25.0
+module load ambertools/25.0
 ```
 
 ## File Directory
@@ -123,7 +123,7 @@ Example input.json:
 ## 2. Run the script
 ```bash
 module purge
-module load StdEnv/2023 gcc/12.3 openmpi/4.1.5 ambertools/25.0
+module load ambertools/25.0
 python gbsa_prep.py -i input.json
 ```
 ## 3. Job Submission Options
