@@ -102,7 +102,7 @@ Example input.json:
   "igb_description": "Generalized Born solvent model parameter (igb = 2 recommended)",
 
   "saltcon": 0.150,
-  "saltcon_description": "Salt concentration (mM)",
+  "saltcon_description": "Salt concentration (M)",
 
   "qm_residues": "1-17,108-120",
   "qm_residues_description": "Residues included in QM region",
