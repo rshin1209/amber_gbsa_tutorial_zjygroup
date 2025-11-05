@@ -144,7 +144,6 @@ def write_slurm_job(out_path: Path, job_name: str, nprocs: int):
 
 set -euo pipefail
 
-module purge
 source /home/shaoq1/bin/amber_env/amber-accre.sh
 
 echo "[$(date)] Running MMPBSA.py.MPI..."
