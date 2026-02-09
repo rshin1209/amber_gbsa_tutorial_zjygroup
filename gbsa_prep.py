@@ -102,6 +102,9 @@ def write_mmgbsa_input(out_path: Path, data: Dict[str, Any]):
     general = (
         f"""&general
    verbose=1,
+   keep_files=0,
+   receptor_mask=:{data["receptor_residues"]},
+   ligand_mask=:{data["ligand_residues"]},
 /
 """
     )
@@ -139,7 +142,7 @@ def write_slurm_job(out_path: Path, job_name: str, nprocs: int):
 #SBATCH --partition=production
 #SBATCH --ntasks={nprocs}
 #SBATCH --mem=64G
-#SBATCH --time=5-00:00:00
+#SBATCH --time=1-00:00:00
 #SBATCH --account=yang_lab
 
 set -euo pipefail
